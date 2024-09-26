@@ -53,7 +53,7 @@ userSchema.pre("save",async function(req,res,next){
      if(!this.isModified("password")){
           return next();
      }else{
-          this.password = bcrypt.hash(this.password, 10); // bcrypt.hash(kya hash karna h, kitne rounds mein) --> used to hash data
+          this.password = await bcrypt.hash(this.password, 10); // bcrypt.hash(kya hash karna h, kitne rounds mein) --> used to hash data
           next();
      }
 })
@@ -98,4 +98,4 @@ userSchema.methods.generateRefreshToken = function(){
      )
 }
 
-export const User = mongoose.model('User',userSchema)
+export const User = mongoose.model('User',userSchema);

@@ -23,8 +23,10 @@ const uploadOnCloudinary = async (localFilePath) => {
           // matlab woh file mere server pe toh h
           // matlab localFilePath toh aa chuka h
           // toh upload fail huya toh woh file hume apne server se toh hata deni chahiye, Clean rakhne ke liye
-          fs.unlinkSync(localFilePath) // remove the locally saved temporary file as the upload operation got failed ()
-          return null
+          fs.unlinkSync(localFilePath); // remove the locally saved temporary file as the upload operation got failed ()
+          return null;
 
      }
 }
+
+export {uploadOnCloudinary};
