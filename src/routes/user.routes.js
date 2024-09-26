@@ -1,5 +1,5 @@
 const express = require('express');
-const registerUser = require('../controllers/user.controller');
+const {registerUser} = require('../controllers/user.controller');
 const router = express.Router();
 const {upload} = require('../middlewares/multer.middleware')
 
@@ -12,7 +12,7 @@ router.route('/register').post(
           {
                name:"coverImage",
                maxCount:1,
-          }
+          },
      ]),
      registerUser,
 )
